@@ -129,19 +129,21 @@ highlight {
 </style>
 
 <div id="primarycontent">
-<center><h1><strong>Past as a Guide</strong><br>Leveraging Retrospective Learning for Python Code Completion</h1></center>
+<br>
+<center><h1><strong>Robust Detection for Autonomous Elevator Boarding</strong></h1></center>
 <center><h2>
     <a href="https://seungyounshin.github.io/">Seungyoun Shin
-    <sup>1,2</sup></a>&nbsp;&nbsp;&nbsp;
-    <a href="https://rllab.snu.ac.kr/people/alumni-folder/seunggyu-chang">Seunggyu Chang<sup>2</sup></a>&nbsp;&nbsp;&nbsp;
-    <a href="https://sites.google.com/view/sungjoon-choi/personal">Sungjoon Choi<sup>2</sup></a>&nbsp;&nbsp;&nbsp;
+    <sup>1</sup></a>&nbsp;&nbsp;&nbsp;
+    <a href="https://joonhyung-lee.github.io/">Joonhyung Lee<sup>1</sup></a>&nbsp;&nbsp;&nbsp;
+    <a href="https://junhyug.github.io/">Junhyug Noh<sup>2</sup></a>&nbsp;&nbsp;&nbsp;
+    <a href="https://sites.google.com/view/sungjoon-choi/personal">Sungjoon Choi<sup>1</sup></a>&nbsp;&nbsp;&nbsp;
   </h2>
   <h2>
     <a href="https://www.korea.edu/"><sup>1</sup>Korea University</a>&nbsp;&nbsp;&nbsp;
-    <a href="https://www.navercloudcorp.com/"><sup>2</sup>Naver Cloud</a>&nbsp;&nbsp;&nbsp;
+    <a href="https://www.ewha.ac.kr/ewhaen/index.do/"><sup>2</sup>Ewha Womans University</a>&nbsp;&nbsp;&nbsp;
   </h2>
-  <h3>Instruction Workshop @ NeurIPS 2023</h3>
-  <h2><a href="https://arxiv.org/abs/2311.07635">Paper</a> | <a href="https://github.com/SeungyounShin/Past-as-a-Guide">Code</a></h2>
+  <h3>The 7th Asian Conference on Pattern Recognition(ACPR 2023)</h3>
+
   </center>
 
  <center><p><span style="font-size:20px;"></span></p></center>
@@ -154,7 +156,7 @@ highlight {
                 <tr>
                     <td>
 <p align="justify" width="20%">
-This work presents <strong>Past as a Guide (PaG)</strong>, a simple approach for Large Language Models (LLMs) to improve the coding capabilities by integrating the past history with interactive and iterative code refinements. To be specific, inspired by human cognitive processes, the proposed method enables LLMs to utilize previous programming and debugging experiences to enhance the Python code completion tasks. The framework facilitates LLMs to iteratively refine the Python code based on previous execution and debugging results and optimize learning and reasoning capabilities. The proposed methodology achieved a 92% pass@1 on HumanEval, demonstrating the potential to advance the field by leveraging retrospection from past experiences and interactive and iterative refinement processes without external correctness indicators.
+Indoor robots are becoming increasingly prevalent across a range of sectors, but the challenge of navigating multi-level structures through elevators remains largely uncharted. For a robot to operate successfully, it's pivotal to have an accurate perception of elevator states. This paper presents a robust robotic system, tailored to interact adeptly with elevators by discerning their status, actuating buttons, and boarding seamlessly. Given the inherent issues of class imbalance and limited data, we utilize the YOLOv7 model and adopt specific strategies to counteract the potential decline in object detection performance. Our method effectively confronts the class imbalance and label dependency observed in real-world datasets, Our method effectively confronts the class imbalance and label dependency observed in real-world datasets, offering a promising approach to improve indoor robotic navigation systems.
 </p></td></tr></table>
 </p>
   </div>
@@ -164,80 +166,103 @@ This work presents <strong>Past as a Guide (PaG)</strong>, a simple approach for
 
 <h1 align="center">Method Overview</h1>
 
-  <table border="0" cellspacing="10" cellpadding="0" align="center"> 
+<table border="0" cellspacing="10" cellpadding="0" align="center">
     <tbody>
         <tr>
             <td align="center" valign="middle">
-                <a href="./src/figure/pag.gif"><img src="./src/figure/pag.gif" style="width:80%;"> </a>
+                <a href="./src/video/demo.mp4">
+                    <video src="./src/video/demo.mp4" style="width:95%;" controls>
+                        Your browser does not support the video tag.
+                    </video>
+                </a>
             </td>
         </tr>
     </tbody>
 </table>
 
+<!-- Inserting the robot image -->
 <table align="center" width="800px">
+    <tr>
+        <td align="center">
+            <img src="./src/figure/robot.png" alt="GAEMI Robotic System" style="width:95%; margin-top: 20px;">
+            <p align="center"><em>Figure: The GAEMI Robotic System in action.</em></p>
+        </td>
+    </tr>
     <tr>
         <td>
             <p align="justify">
-                First, an <span class="green">initial question</span> is presented. Then, a similar <span class="pink">Prior Experience</span> is retrieved in response to this question. Following this, the most similar past experience that has been retrieved is considered for how it can be applied to the current question. This is the <span class="blue">Retrospection</span> step. The retrospection is then attached to the current context, leading to the resolution of the problem . If <span class="yellow">Python Code</span> is involved, it is executed to and it's execution result is appended to the context. Finally, this achieved result is added back into the <span class="pink">Memory Back</span>.
+                The <span style="color: #007BFF;">Perception System</span> aims to enhance robotic capabilities for autonomous elevator usage. We first develop a comprehensive <span style="color: #007BFF;">Label Superset</span> to cover all possible scenarios of elevator status, which includes door movement and floor location. Utilizing the <span style="color: #007BFF;">YOLOv7</span> model, optimized for speed and accuracy, we address elevator-related tasks crucial for navigation and interaction, including <span style="color: #007BFF;">label dependency</span> and small object detection challenges. Our approach leverages <span style="color: #007BFF;">patch-augmentation</span> and <span style="color: #007BFF;">Gaussian blur</span> techniques to enhance dataset quality and model training effectiveness. Finally, the <span style="color: #007BFF;">GAEMI robotic system</span> is deployed, utilizing advanced object detection and instance segmentation to facilitate precise and reliable autonomous elevator boarding operations.
             </p>
         </td>
     </tr>
 </table>
 
+
+
   
 <h1 align="center">Experiments</h1>
 <hr>
 
-<h2>Code Completion Experiments</h2>
+<h2>Experiments Overview</h2>
 
-<p><strong>Task:</strong> This experiment is based on the HumanEval task, aimed at completing Python code skeletons. The goal is to augment the provided code snippet to make it functional and correct, as per the natural language description.</p>
+<p align="justify">
+    <strong>Experiment Setup:</strong> The objective of our experiments was to validate the effectiveness of the <em>YOLOv7 model</em> in real-world scenarios using robotic systems for elevator interaction. The primary tasks included navigating to the button position, pressing elevator buttons, and boarding the elevator. Results demonstrated robust performance in autonomous tasks.
+</p>
 
-<p><strong>Results:</strong> The effectiveness of our methods was compared against baseline models. Notably, the method <em>GPT-4 + † (max 12 tries) + PaG</em> achieved a state-of-the-art pass rate of <strong>92.07%</strong>, outperforming other approaches.</p>
+<p align="justify">
+    <strong>Dataset and Method:</strong> We utilized two main datasets: the <span style="color: blue;">Indicator dataset</span> for elevator status and the <span style="color: green;">Button dataset</span> for interaction points, crucial for task execution. Our method combined <em>instance segmentation</em> and advanced <em>object detection techniques</em> to improve detection accuracy and interaction effectiveness.
+</p>
 
 <table border="1" align="center">
+    <caption><strong>Performance Summary</strong></caption>
     <tr>
-        <th>Method</th>
-        <th>% Pass@1</th>
+        <th>Task</th>
+        <th>Success Rate</th>
     </tr>
     <tr>
-        <td>GPT-4</td>
-        <td>67.00</td>
+        <td>Navigate to Button</td>
+        <td>100%</td>
     </tr>
     <tr>
-        <td>GPT-4 + † (max 6 tries)</td>
-        <td>84.15</td>
+        <td>Button Pressing</td>
+        <td>90%</td>
     </tr>
     <tr>
-        <td>GPT-4 + † (max 12 tries)</td>
-        <td>90.85</td>
-    </tr>
-    <tr>
-        <td>Reflexion</td>
-        <td>91.00</td>
-    </tr>
-    <tr>
-        <td><strong>GPT-4 + † (max 12 tries) + PaG</strong></td>
-        <td><strong>92.07</strong></td>
+        <td>Elevator Boarding</td>
+        <td>30%</td>
     </tr>
 </table>
 
-<p>The approach of combining retrospective guidance with interactive and iterative code refinements proved effective, even without external correctness feedback.</p>
+<p align="justify">
+    <strong>Conclusion:</strong> The experiments confirmed that our enhancements to the YOLOv7 model, particularly through <em>patch-augmentation</em> and <em>blur techniques</em>, significantly improved task-specific performance, demonstrating the potential for practical deployment in automated systems.
+</p>
+
+<!-- Adding the map image with description -->
+<h2 align="center">Real-World Operation Environment</h2>
+<p align="center">
+    <img src="./src/figure/map.png" alt="Occupancy Map of Woojung Hall of Informatics" style="width:80%; margin-top: 20px;">
+    <br>
+    <em>Figure: Occupancy map of Woojung Hall of Informatics. This figure illustrates the constructed occupancy map of the 6th floor of Woojung Hall of Informatics at Korea University, which serves as the operational landscape for all our real-world robot experiments.</em>
+</p>
 
 
 
 <center><h1>Citation</h1></center>
-<table align=center width=800px>
+<table align="center" width="800px">
   <tr>
     <td>
-    <pre><code style="display:block; overflow-x: auto">
-      @misc{shin2023pag,
-        title={Past as a Guide : Leveraging Retrospective Learning for Python Code Completion},
-        author={Shin, Seungyoun and Chang, Seunggyu and Choi, Sungjoon},
-        eprint={2311.07635},
-        archivePrefix={arXiv},
-        primaryClass={cs.AI}
-        year={2023}
-      }
+    <pre><code style="display:block; white-space: pre-wrap; overflow-x: auto;">
+@InProceedings{10.1007/978-3-031-47634-1_2,
+    author = "Shin, Seungyoun and Lee, Joon Hyung and Noh, Junhyug and Choi, Sungjoon",
+    editor = "Lu, Huimin and Blumenstein, Michael and Cho, Sung-Bae and Liu, Cheng-Lin and Yagi, Yasushi and Kamiya, Tohru",
+    title = "Robust Detection for Autonomous Elevator Boarding Using a Mobile Manipulator",
+    booktitle = "Pattern Recognition",
+    year = "2023",
+    publisher = "Springer Nature Switzerland",
+    address = "Cham",
+    pages = "15--28",
+    isbn = "978-3-031-47634-1"
+}
     </code></pre>
     </td>
   </tr>

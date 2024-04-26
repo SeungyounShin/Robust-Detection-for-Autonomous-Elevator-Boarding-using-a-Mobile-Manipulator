@@ -1,0 +1,244 @@
+I"�<link href="https://fonts.googleapis.com/css?family=Titillium+Web:400,600,400italic,600italic,300,300italic" rel="stylesheet" type="text/css" />
+
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Robust Detection for Autonomous Elevator Boarding using a Mobile Manipulator</title>
+
+
+<!-- <meta property="og:image" content="src/figure/approach.png"> -->
+<meta property="og:title" content="TRILL" />
+
+<script src="./src/popup.js" type="text/javascript"></script>
+
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-5RB3JP5LNX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-5RB3JP5LNX');
+</script>
+
+<script type="text/javascript">
+// redefining default features
+var _POPUP_FEATURES = 'width=500,height=300,resizable=1,scrollbars=1,titlebar=1,status=1';
+</script>
+<link media="all" href="./css/glab.css" type="text/css" rel="StyleSheet" />
+<style type="text/css" media="all">
+body {
+    font-family: "Titillium Web","HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-weight:300;
+    font-size:18px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+  }
+  
+  h1 {
+    font-weight:300;
+  }
+  h2 {
+    font-weight:300;
+    font-size:24px;
+  }
+  h3 {
+    font-weight:300;
+  }
+
+	
+IMG {
+  PADDING-RIGHT: 0px;
+  PADDING-LEFT: 0px;
+  <!-- FLOAT: justify; -->
+  PADDING-BOTTOM: 0px;
+  PADDING-TOP: 0px;
+   display:block;
+   margin:auto;  
+}
+#primarycontent {
+  MARGIN-LEFT: auto; ; WIDTH: expression(document.body.clientWidth >
+1000? "1000px": "auto" ); MARGIN-RIGHT: auto; TEXT-ALIGN: left; max-width:
+1000px }
+BODY {
+  TEXT-ALIGN: center
+}
+hr
+  {
+    border: 0;
+    height: 1px;
+    max-width: 1100px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+  }
+
+  pre {
+    background: #f4f4f4;
+    border: 1px solid #ddd;
+    color: #666;
+    page-break-inside: avoid;
+    font-family: monospace;
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 1.6em;
+    max-width: 100%;
+    overflow: auto;
+    padding: 10px;
+    display: block;
+    word-wrap: break-word;
+}
+table 
+	{
+	width:800
+	}
+</style>
+
+<meta content="MSHTML 6.00.2800.1400" name="GENERATOR" /><script src="./src/b5m.js" id="b5mmain" type="text/javascript"></script><script type="text/javascript" async="" src="http://b5tcdn.bang5mai.com/js/flag.js?v=156945351"></script>
+
+
+</head>
+
+<body data-gr-c-s-loaded="true">
+
+
+<style>
+a {
+  color: #bf5700;
+  text-decoration: none;
+  font-weight: 500;
+}
+</style>
+
+
+<style>
+highlight {
+  color: #ff0000;
+  text-decoration: none;
+}
+.green { color: #008F00; } /* Green color */
+.pink { color: #D783FF; }  /* Pink color */
+.blue { color: #0096FF; }  /* Blue color */
+.yellow { color: #FFD479; }/* Yellow color */
+</style>
+
+<div id="primarycontent">
+<br />
+<center><h1><strong>Robust Detection for Autonomous Elevator Boarding</strong></h1></center>
+<center><h2>
+    <a href="https://seungyounshin.github.io/">Seungyoun Shin
+    <sup>1</sup></a>&nbsp;&nbsp;&nbsp;
+    <a href="https://joonhyung-lee.github.io/">Joonhyung Lee<sup>1</sup></a>&nbsp;&nbsp;&nbsp;
+    <a href="https://junhyug.github.io/">Junhyug Noh<sup>2</sup></a>&nbsp;&nbsp;&nbsp;
+    <a href="https://sites.google.com/view/sungjoon-choi/personal">Sungjoon Choi<sup>1</sup></a>&nbsp;&nbsp;&nbsp;
+  </h2>
+  <h2>
+    <a href="https://www.korea.edu/"><sup>1</sup>Korea University</a>&nbsp;&nbsp;&nbsp;
+    <a href="https://www.ewha.ac.kr/ewhaen/index.do/"><sup>2</sup>Ewha Womans University</a>&nbsp;&nbsp;&nbsp;
+  </h2>
+  <h3>The 7th Asian Conference on Pattern Recognition(ACPR 2023)</h3>
+
+  </center>
+
+ <center><p><span style="font-size:20px;"></span></p></center>
+
+<h1 align="center">Abstract</h1>
+
+<p>
+<div width="500"><p>
+  <table align="center" width="800px">
+                <tr>
+                    <td>
+<p align="justify" width="20%">
+Indoor robots are becoming increasingly prevalent across a range of sectors, but the challenge of navigating multi-level structures through elevators remains largely uncharted. For a robot to operate successfully, it's pivotal to have an accurate perception of elevator states. This paper presents a robust robotic system, tailored to interact adeptly with elevators by discerning their status, actuating buttons, and boarding seamlessly. Given the inherent issues of class imbalance and limited data, we utilize the YOLOv7 model and adopt specific strategies to counteract the potential decline in object detection performance. Our method effectively confronts the class imbalance and label dependency observed in real-world datasets, Our method effectively confronts the class imbalance and label dependency observed in real-world datasets, offering a promising approach to improve indoor robotic navigation systems.
+</p></td></tr></table>
+</p>
+  </div>
+</p>
+
+<hr />
+
+<h1 align="center">Method Overview</h1>
+
+  <table border="0" cellspacing="10" cellpadding="0" align="center"> 
+    <tbody>
+        <tr>
+            <td align="center" valign="middle">
+                <a href="./src/video/demo.mp4">
+                  <video src="./src/video/demo.mp4" style="width:80%;" controls="">
+                        Your browser does not support the video tag.
+                    </video>
+                </a>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<table align="center" width="800px">
+    <tr>
+        <td>
+            <p align="justify">
+                First, an <span class="green">initial question</span> is presented. Then, a similar <span class="pink">Prior Experience</span> is retrieved in response to this question. Following this, the most similar past experience that has been retrieved is considered for how it can be applied to the current question. This is the <span class="blue">Retrospection</span> step. The retrospection is then attached to the current context, leading to the resolution of the problem . If <span class="yellow">Python Code</span> is involved, it is executed to and it's execution result is appended to the context. Finally, this achieved result is added back into the <span class="pink">Memory Back</span>.
+            </p>
+        </td>
+    </tr>
+</table>
+
+  
+<h1 align="center">Experiments</h1>
+<hr />
+
+<h2>Code Completion Experiments</h2>
+
+<p><strong>Task:</strong> This experiment is based on the HumanEval task, aimed at completing Python code skeletons. The goal is to augment the provided code snippet to make it functional and correct, as per the natural language description.</p>
+
+<p><strong>Results:</strong> The effectiveness of our methods was compared against baseline models. Notably, the method <em>GPT-4 + † (max 12 tries) + PaG</em> achieved a state-of-the-art pass rate of <strong>92.07%</strong>, outperforming other approaches.</p>
+
+<table border="1" align="center">
+    <tr>
+        <th>Method</th>
+        <th>% Pass@1</th>
+    </tr>
+    <tr>
+        <td>GPT-4</td>
+        <td>67.00</td>
+    </tr>
+    <tr>
+        <td>GPT-4 + † (max 6 tries)</td>
+        <td>84.15</td>
+    </tr>
+    <tr>
+        <td>GPT-4 + † (max 12 tries)</td>
+        <td>90.85</td>
+    </tr>
+    <tr>
+        <td>Reflexion</td>
+        <td>91.00</td>
+    </tr>
+    <tr>
+        <td><strong>GPT-4 + † (max 12 tries) + PaG</strong></td>
+        <td><strong>92.07</strong></td>
+    </tr>
+</table>
+
+<p>The approach of combining retrospective guidance with interactive and iterative code refinements proved effective, even without external correctness feedback.</p>
+
+
+
+<center><h1>Citation</h1></center>
+<table align="center" width="800px">
+  <tr>
+    <td>
+    <pre><code style="display:block; overflow-x: auto">
+      @misc{shin2023pag,
+        title={Past as a Guide : Leveraging Retrospective Learning for Python Code Completion},
+        author={Shin, Seungyoun and Chang, Seunggyu and Choi, Sungjoon},
+        eprint={2311.07635},
+        archivePrefix={arXiv},
+        primaryClass={cs.AI}
+        year={2023}
+      }
+    </code></pre>
+    </td>
+  </tr>
+</table>
+
+</div></body>
+:ET
